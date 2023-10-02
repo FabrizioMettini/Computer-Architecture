@@ -5,15 +5,15 @@ main:
     movl $2, %ecx
     imull %ecx
 
-    movq $0xffffffff00000000, %rbx
-    orq %rbx, %rax
+    shlq $32, %rdx
+    orq %rdx, %rax
 
     xorq %rax, %rax
     movw $-1, %ax
     movw $2, %cx 
     mulw %cx  
 
-    movl $0x10000, %ebx
-    orl %ebx, %eax
+    shll $16, %edx
+    orl %edx, %eax
     
     ret
