@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include <assert.h>
 
-void rotar(int * a, int * b, int * c){
+void rotate(int *a, int *b, int *c){
     *a = *a ^ *b;
     *b = *a ^ *b;
     *a = *a ^ *b;
@@ -10,20 +10,9 @@ void rotar(int * a, int * b, int * c){
     *a = *a ^ *c;
 }
 
-int main(){
-    int a;
-    int b;
-    int c;
-
-    printf("Ingrese a: ");
-    scanf("%d",&a);
-    printf("Ingrese b: ");
-    scanf("%d",&b);
-    printf("Ingrese c: ");
-    scanf("%d",&c);
-    printf("a-> %d, b -> %d, c -> %d\n", a,b,c);
-    rotar(&a,&b,&c);
-    printf("Se han rotados los valores.\n");
-    printf("a-> %d, b -> %d, c -> %d\n", a,b,c);
+int main() {
+    int a = 3, b = 5, c = 7;
+    rotate(&a, &b, &c);
+    assert(a == 7 && b == 3 && c == 5);
     return 0;
 }
