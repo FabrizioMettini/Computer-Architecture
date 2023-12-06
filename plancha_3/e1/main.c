@@ -1,9 +1,11 @@
-#include<stdio.h>
+#include <assert.h>
+
 double convert(double, int);
 
-int main(){
+int main()
+{
     double f = 3.5;
     int c = 32;
-    printf("El resultado de la conversion es: %f\n", convert(f,c));
+    assert(convert(f, c) == 37.25);
     return 0;
 }
